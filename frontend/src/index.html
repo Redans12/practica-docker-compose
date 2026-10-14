@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reservación de espacios</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <h1>Reservación de espacios</h1>
+    <div id="mensaje" class="mensaje" hidden></div>
+
+    <section class="tarjeta">
+      <h2 id="titulo-form">Nueva reservación</h2>
+      <form id="formulario" novalidate>
+        <input type="hidden" id="id">
+        <label>Espacio <input id="espacio" maxlength="80" placeholder="Ej. Laboratorio 3"></label>
+        <label>Solicitante <input id="solicitante" maxlength="100"></label>
+        <label>Correo <input id="correo" type="email" maxlength="120"></label>
+        <label>Fecha <input id="fecha" type="date"></label>
+        <label>Hora de inicio <input id="hora_inicio" type="time"></label>
+        <label>Hora de fin <input id="hora_fin" type="time"></label>
+        <label>Estado
+          <select id="estado">
+            <option value="pendiente">Pendiente</option>
+            <option value="confirmada">Confirmada</option>
+            <option value="cancelada">Cancelada</option>
+          </select>
+        </label>
+        <div class="acciones">
+          <button type="submit" id="guardar">Guardar</button>
+          <button type="button" id="cancelar" class="secundario" hidden>Cancelar edición</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="tarjeta">
+      <h2>Reservaciones</h2>
+      <div class="tabla-wrap">
+        <table>
+          <thead>
+            <tr><th>ID</th><th>Espacio</th><th>Solicitante</th><th>Correo</th><th>Fecha</th><th>Horario</th><th>Estado</th><th>Acciones</th></tr>
+          </thead>
+          <tbody id="lista"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
